@@ -51,7 +51,7 @@ func Camel(s ...string) string {
 		if initialisms[uw] {
 			a[i] = uw
 		} else {
-			a[i] = strings.Title(w)
+			a[i] = strings.Title(strings.ToLower(w))
 		}
 	}
 	return Unreserved(strings.Join(a, ""))
@@ -66,7 +66,7 @@ func Pascal(s ...string) string {
 		if initialisms[uw] {
 			a[i] = uw
 		} else {
-			a[i] = strings.Title(w)
+			a[i] = strings.Title(strings.ToLower(w))
 		}
 	}
 	return Unreserved(strings.Join(a, ""))

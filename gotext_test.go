@@ -62,6 +62,8 @@ func TestCamel(t *testing.T) {
 		{gotext.Camel, "newIn", "newIn"},
 		{gotext.Camel, "new", "_new"},
 		{gotext.Camel, "Blog", "blog"},
+		{gotext.Camel, "ASKED", "asked"},
+		{gotext.Camel, "ASKED_RECIEVED", "askedRecieved"},
 	}
 	for _, test := range tests {
 		assert.Equal(t, test.out, test.fn(test.in), "%s != %s", test.in, test.out)
@@ -78,6 +80,8 @@ func TestPascal(t *testing.T) {
 		{gotext.Pascal, "http user", "HTTPUser"},
 		{gotext.Pascal, "string", "String"},
 		{gotext.Pascal, "Blog", "Blog"},
+		{gotext.Pascal, "ASKED", "Asked"},
+		{gotext.Pascal, "ASKED_RECIEVED", "AskedRecieved"},
 	}
 	for _, test := range tests {
 		assert.Equal(t, test.out, test.fn(test.in), "%s != %s", test.in, test.out)
