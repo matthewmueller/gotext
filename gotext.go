@@ -23,9 +23,9 @@ func Unreserved(s string) string {
 	return s
 }
 
-// Base case
-func Base(s ...string) string {
-	return Unreserved(text.Base(strings.Join(s, " ")))
+// Space case
+func Space(s ...string) string {
+	return Unreserved(text.Space(strings.Join(s, " ")))
 }
 
 // Lower case
@@ -40,7 +40,7 @@ func Upper(s ...string) string {
 
 // Camel case
 func Camel(s ...string) string {
-	a := strings.Split(text.Base(strings.Join(s, " ")), " ")
+	a := strings.Split(text.Space(strings.Join(s, " ")), " ")
 	for i, w := range a {
 		if i == 0 {
 			a[i] = strings.ToLower(a[i])
@@ -59,7 +59,7 @@ func Camel(s ...string) string {
 
 // Pascal case
 func Pascal(s ...string) string {
-	a := strings.Split(text.Base(strings.Join(s, " ")), " ")
+	a := strings.Split(text.Space(strings.Join(s, " ")), " ")
 	for i, w := range a {
 		// avoid initialisms
 		uw := text.Upper(w)
@@ -104,5 +104,5 @@ func Plural(s ...string) string {
 
 // Slim string
 func Slim(s ...string) string {
-	return Unreserved(strings.Join(strings.Split(text.Base(strings.Join(s, " ")), " "), ""))
+	return Unreserved(strings.Join(strings.Split(text.Space(strings.Join(s, " ")), " "), ""))
 }
