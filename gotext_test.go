@@ -23,6 +23,8 @@ func TestSingular(t *testing.T) {
 		{gotext.Singular, "hi_worlds", "hi_world"},
 		{gotext.Singular, "his_worlds", "his_world"},
 		{gotext.Singular, "his", "hi"},
+		{gotext.Singular, "Blogs", "Blog"},
+		{gotext.Singular, "Blog", "Blog"},
 	}
 	for _, test := range tests {
 		assert.Equal(t, test.out, test.fn(test.in), "%s != %s", test.in, test.out)
@@ -40,6 +42,8 @@ func TestPlural(t *testing.T) {
 		{gotext.Plural, "his_world", "his_worlds"},
 		{gotext.Plural, "his", "his"},
 		{gotext.Plural, "hi", "his"},
+		{gotext.Plural, "Blogs", "Blogs"},
+		{gotext.Plural, "Blog", "Blogs"},
 	}
 	for _, test := range tests {
 		assert.Equal(t, test.out, test.fn(test.in), "%s != %s", test.in, test.out)
@@ -57,6 +61,7 @@ func TestCamel(t *testing.T) {
 		{gotext.Camel, "string", "_string"},
 		{gotext.Camel, "newIn", "newIn"},
 		{gotext.Camel, "new", "_new"},
+		{gotext.Camel, "Blog", "blog"},
 	}
 	for _, test := range tests {
 		assert.Equal(t, test.out, test.fn(test.in), "%s != %s", test.in, test.out)
@@ -72,6 +77,7 @@ func TestPascal(t *testing.T) {
 		{gotext.Pascal, "id dns http", "IDDNSHTTP"},
 		{gotext.Pascal, "http user", "HTTPUser"},
 		{gotext.Pascal, "string", "String"},
+		{gotext.Pascal, "Blog", "Blog"},
 	}
 	for _, test := range tests {
 		assert.Equal(t, test.out, test.fn(test.in), "%s != %s", test.in, test.out)
@@ -89,6 +95,7 @@ func TestSlim(t *testing.T) {
 		{gotext.Slim, "id dns http", "iddnshttp"},
 		{gotext.Slim, "http user", "httpuser"},
 		{gotext.Slim, "string", "_string"},
+		{gotext.Slim, "Blog", "Blog"},
 	}
 	for _, test := range tests {
 		assert.Equal(t, test.out, test.fn(test.in), "%s != %s", test.in, test.out)

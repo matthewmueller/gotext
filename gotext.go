@@ -43,6 +43,7 @@ func Camel(s ...string) string {
 	a := strings.Split(text.Base(strings.Join(s, " ")), " ")
 	for i, w := range a {
 		if i == 0 {
+			a[i] = strings.ToLower(a[i])
 			continue
 		}
 		// avoid initialisms
